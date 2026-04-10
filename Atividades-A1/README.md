@@ -17,39 +17,58 @@ Antes de começar, é recomendado revisar:
 
 ## Regras de entrega
 
-- Criar a pasta `Atividades-A1`.
-- Criar dentro dela uma pasta com o nome completo do aluno.
-- Fazer a atividade em uma branch com o nome do aluno.
-- Manter o projeto organizado em pastas e arquivos coerentes com o que foi visto em aula.
-- Entregar o código com `README.md` e instruções de execução.
+- A atividade deve ser feita em uma **branch com o seu nome completo**.
+- Dentro da pasta `Atividades-A1`, crie uma pasta para seu **turno** (`Vespertino` ou `Noturno`).
+- Dentro da pasta do turno, crie uma pasta com o seu **nome completo**.
+- O projeto deve ser bem organizado, com `README.md` e instruções de execução.
 
 ## Como clonar e enviar
 
-### Clonar o repositório
+Siga os passos abaixo para garantir que sua atividade seja enviada corretamente.
+
+### 1. Clonar o repositório
+
+Se você já clonou o repositório, pule esta etapa.
 
 ```bash
-git clone https://github.com/SEU-USUARIO/REPOSITORIO-DA-TURMA.git
-cd REPOSITORIO-DA-TURMA
+git clone https://github.com/oMaestro174/node.js-e-express.git
+cd node.js-e-express
 ```
 
-### Criar a branch
+### 2. Criar sua branch de trabalho
+
+Use seu nome completo para criar a branch.
 
 ```bash
-git checkout -b nome-do-aluno
+git checkout -b "Seu Nome Completo"
 ```
 
-### Criar a pasta da atividade
+### 3. Criar sua pasta de atividade
+
+Escolha **apenas um** dos comandos abaixo, de acordo com o seu turno, e **substitua `"Seu Nome Completo"`** pelo seu nome.
+
+**Alunos da Tarde (Vespertino):**
 
 ```bash
-mkdir -p Atividades-A1/Nome-do-Aluno
+mkdir -p "Atividades-A1/Vespertino/Seu Nome Completo"
 ```
 
-### Commitar e enviar
+**Alunos da Noite (Noturno):**
+
+```bash
+mkdir -p "Atividades-A1/Noturno/Seu Nome Completo"
+```
+
+Agora, coloque todos os arquivos da sua atividade dentro dessa pasta.
+
+### 4. Commitar e enviar
+
+Após finalizar sua atividade, envie para o repositório.
 
 ```bash
 git add .
-git commit -m "A1: atividade do nome do aluno"
-git push origin nome-do-aluno
+git commit -m "A1: Atividade de [Seu Nome Completo] - [Seu Turno]"
+git push origin "Seu Nome Completo"
 ```
 
 ## Nível 1 — Básico
