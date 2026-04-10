@@ -1,0 +1,25 @@
+# Dependências
+node_modules/
+**/node_modules/
+
+# Arquivos de manifesto do npm
+package.json
+package-lock.json
+**/package.json
+**/package-lock.json
+
+# Arquivo local de retomada de conversa
+retomada-conversa.md
+
+# Ignorar a pasta de gabaritos e soluções
+/gabaritos
+
+# Ignorar o histórico do projeto (contexto do professor)
+/HISTORICO_DO_PROJETO.md
+
+# Arquivos de log e sistema
+npm-debug.log*
+.DS_Store
+
+/Assets
+/Praticando-Assincronia
