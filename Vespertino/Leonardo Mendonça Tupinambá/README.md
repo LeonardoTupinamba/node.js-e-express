@@ -176,30 +176,30 @@ Remove um aluno pelo ID.
 
 ---
 
-## 🧪 Testes com Postman
+Testes com Postman
 
-### Teste 1 — Listar todos os alunos (sucesso)
+Teste 1 — Listar todos os alunos (sucesso)
 
 - **Método:** GET
-- **URL:** `http://localhost:3000/alunos`
+- **URL:** `http://localhost:3001/alunos`
 - **Resultado esperado:** Status 200 com lista de alunos
 
-### Teste 2 — Buscar aluno por ID (sucesso)
+Teste 2 — Buscar aluno por ID (sucesso)
 
 - **Método:** GET
-- **URL:** `http://localhost:3000/alunos/1`
+- **URL:** `http://localhost:3001/alunos/1`
 - **Resultado esperado:** Status 200 com dados do aluno
 
-### Teste 3 — Buscar aluno por ID (erro)
+Teste 3 — Buscar aluno por ID (erro)
 
 - **Método:** GET
-- **URL:** `http://localhost:3000/alunos/99`
+- **URL:** `http://localhost:3001/alunos/99`
 - **Resultado esperado:** Status 404 com mensagem de erro
 
-### Teste 4 — Criar novo aluno (sucesso)
+Teste 4 — Criar novo aluno (sucesso)
 
 - **Método:** POST
-- **URL:** `http://localhost:3000/alunos`
+- **URL:** `http://localhost:3001/alunos`
 - **Headers:** `Content-Type: application/json`
 - **Body:**
 
@@ -209,10 +209,10 @@ Remove um aluno pelo ID.
 
 - **Resultado esperado:** Status 201 com aluno criado
 
-### Teste 5 — Criar aluno sem campos obrigatórios (erro)
+Teste 5 — Criar aluno sem campos obrigatórios (erro)
 
 - **Método:** POST
-- **URL:** `http://localhost:3000/alunos`
+- **URL:** `http://localhost:3001/alunos`
 - **Headers:** `Content-Type: application/json`
 - **Body:**
 
@@ -222,10 +222,10 @@ Remove um aluno pelo ID.
 
 - **Resultado esperado:** Status 400 com mensagem de erro
 
-### Teste 6 — Atualizar aluno (sucesso)
+Teste 6 — Atualizar aluno (sucesso)
 
 - **Método:** PUT
-- **URL:** `http://localhost:3000/alunos/1`
+- **URL:** `http://localhost:3001/alunos/1`
 - **Headers:** `Content-Type: application/json`
 - **Body:**
 
@@ -235,15 +235,15 @@ Remove um aluno pelo ID.
 
 - **Resultado esperado:** Status 200 com aluno atualizado
 
-### Teste 7 — Deletar aluno (sucesso)
+Teste 7 — Deletar aluno (sucesso)
 
 - **Método:** DELETE
-- **URL:** `http://localhost:3000/alunos/2`
+- **URL:** `http://localhost:3001/alunos/2`
 - **Resultado esperado:** Status 204 sem conteúdo
 
 ---
 
-## 🎨 Logger colorido
+Logger colorido
 
 O middleware de logging exibe no terminal as requisições com cores por status code:
 
