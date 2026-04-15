@@ -8,24 +8,25 @@ package-lock.json
 **/package.json
 **/package-lock.json
 
-# Arquivo local de retomada de conversa
-retomada-conversa.md
+# Arquivo local de lembretes
+memories.md
 
 # Ignorar a pasta de gabaritos e soluções
 /gabaritos
 
 # Ignorar o histórico do projeto (contexto do professor)
-/HISTORICO_DO_PROJETO.md
+/history.md
 
 # Arquivos de log e sistema
 npm-debug.log*
 .DS_Store
 
 /Assets
-/Praticando-Assincronia
+/PraticesAssync
 # VS Code Workspace file
 *.code-workspace
 
 # Aulas em desenvolvimento
-Aula05/
 Aula06/
+Aula07/
+dicas.md

@@ -242,3 +242,71 @@ SELECT * FROM tasks;
 - O diagrama de modelagem entregue como parte da atividade complementar.
 
 Parabéns! Você acaba de criar a fundação do banco de dados para a sua aplicação. Na próxima aula, aprenderemos a conectar nossa API Node.js a este banco para manipular os dados.
+
+---
+
+## 5. Evoluindo o Banco de Dados com `ALTER TABLE`
+
+No desenvolvimento de software, é muito comum que os requisitos mudem e que precisemos alterar a estrutura de tabelas que já existem. O comando `ALTER TABLE` é a ferramenta para isso.
+
+Vamos ver alguns exemplos práticos baseados em nosso projeto.
+
+### Exemplo 1: Adicionar uma coluna de prioridade às tarefas
+
+Imagine que agora precisamos definir uma prioridade (ex: 'baixa', 'média', 'alta') para nossas tarefas.
+
+```sql
+ALTER TABLE tasks
+ADD COLUMN priority VARCHAR(20);
+```
+
+Após executar este comando, se você consultar a tabela `tasks`, verá a nova coluna `priority` preenchida com `NULL` para os registros existentes.
+
+Podemos definir um valor padrão para essa nova coluna:
+
+```sql
+-- Define um valor padrão para a coluna
+ALTER TABLE tasks
+ALTER COLUMN priority SET DEFAULT 'baixa';
+
+-- Agora, novas tarefas inseridas sem especificar a prioridade receberão 'baixa'
+INSERT INTO tasks (title, user_id) VALUES ('Nova tarefa sem prioridade', 1);
+```
+
+### Exemplo 2: Renomear uma coluna
+
+Suponha que decidimos que `name` na tabela `users` deveria se chamar `full_name` para ser mais descritivo.
+
+```sql
+ALTER TABLE users
+RENAME COLUMN name TO full_name;
+```
+
+### Exemplo 3: Adicionar uma restrição `CHECK`
+
+Queremos garantir que o `status` de uma tarefa só possa ser 'pendente', 'em andamento' ou 'concluída'. Podemos adicionar uma restrição `CHECK`.
+
+```sql
+ALTER TABLE tasks
+ADD CONSTRAINT check_status
+CHECK (status IN ('pendente', 'em andamento', 'concluída'));
+```
+
+Agora, se você tentar inserir ou atualizar uma tarefa com um status diferente, o PostgreSQL retornará um erro.
+
+```sql
+-- Este comando irá falhar
+UPDATE tasks SET status = 'atrasada' WHERE id = 1;
+-- ERROR:  new row for relation "tasks" violates check constraint "check_status"
+```
+
+### Exemplo 4: Remover uma coluna
+
+Se a coluna `due_date` não for mais necessária, podemos removê-la. **Cuidado, esta ação é destrutiva e remove todos os dados da coluna.**
+
+```sql
+ALTER TABLE tasks
+DROP COLUMN due_date;
+```
+
+Esses são apenas alguns exemplos do poder do `ALTER TABLE`. Ele permite que seu esquema de banco de dados evolua junto com sua aplicação.
