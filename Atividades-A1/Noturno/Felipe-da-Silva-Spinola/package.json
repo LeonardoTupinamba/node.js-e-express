@@ -1,0 +1,13 @@
+{
+  "name": "a1-felipe-da-silva-spinola",
+  "version": "1.0.0",
+  "description": "API de alunos em memória desenvolvida para a Atividade A1.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "colors": "^1.4.0",
+    "express": "^4.21.2"
+  }
+}
