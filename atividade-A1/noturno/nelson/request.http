@@ -1,0 +1,18 @@
+GET http://localhost:3001
+
+###
+
+GET http://localhost:3001/usuarios
+
+###
+
+GET http://localhost:3001/usuarios/4
+
+###
+
+POST http://localhost:3001/usuarios
+Content-Type: application/json
+
+{
+    "nombre": "nelson"
+}
