@@ -11,8 +11,7 @@ package-lock.json
 # Arquivo local de lembretes
 memories.md
 
-# Ignorar a pasta de gabaritos e soluções
-/gabaritos
+
 
 # Ignorar o histórico do projeto (contexto do professor)
 /history.md
@@ -30,23 +29,22 @@ npm-debug.log*
 
 
 
-Aula10/
 
-Tests/src/db.js
+
+
 dicas.md
 
- 
 
 
 COMO_SINCRONIZAR_ALTERACOES.md
 HISTORICO_DO_PROJETO.md
 Praticando-Assincronia/
-Tests/src/db.js
+
 pool.md
 pool.md.backup
 retomada-conversa.md
 teste-de-memoria.md
-ROTEIRO_AULA_10.md
 
 
-Labs/
+
+
