@@ -1,0 +1,108 @@
+{
+  "info": {
+    "name": "API Alunos - Testes",
+    "_postman_id": "api-alunos-collection",
+    "description": "Coleção de testes manuais para a API de Alunos",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Teste 1 - GET /alunos (lista vazia)",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:3000/alunos",
+        "description": "Lista todos os alunos. Retorna lista vazia no início."
+      },
+      "response_esperada": {
+        "status": 200,
+        "body": {
+          "total": 0,
+          "alunos": []
+        }
+      }
+    },
+    {
+      "name": "Teste 2 - POST /alunos (criar aluno válido)",
+      "request": {
+        "method": "POST",
+        "url": "http://localhost:3000/alunos",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "nome": "Maria Silva",
+          "idade": 22,
+          "curso": "Engenharia de Software"
+        },
+        "description": "Cria um novo aluno. Deve retornar 201 com os dados do aluno criado."
+      },
+      "response_esperada": {
+        "status": 201,
+        "body": {
+          "mensagem": "Aluno cadastrado com sucesso!",
+          "aluno": {
+            "id": 1,
+            "nome": "Maria Silva",
+            "idade": 22,
+            "curso": "Engenharia de Software",
+            "criadoEm": "<timestamp>"
+          }
+        }
+      }
+    },
+    {
+      "name": "Teste 3 - POST /alunos (criar segundo aluno)",
+      "request": {
+        "method": "POST",
+        "url": "http://localhost:3000/alunos",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "nome": "João Costa",
+          "idade": 25,
+          "curso": "Ciência da Computação"
+        }
+      },
+      "response_esperada": {
+        "status": 201
+      }
+    },
+    {
+      "name": "Teste 4 - GET /alunos (após inserções)",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:3000/alunos",
+        "description": "Lista alunos após os POSTs. Deve retornar total: 2."
+      },
+      "response_esperada": {
+        "status": 200,
+        "body": {
+          "total": 2
+        }
+      }
+    },
+    {
+      "name": "Teste 5 - POST /alunos (dados inválidos)",
+      "request": {
+        "method": "POST",
+        "url": "http://localhost:3000/alunos",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "nome": "",
+          "idade": -1
+        },
+        "description": "Testa validação. Deve retornar 400 com lista de erros."
+      },
+      "response_esperada": {
+        "status": 400,
+        "body": {
+          "mensagem": "Dados inválidos.",
+          "erros": ["...", "..."]
+        }
+      }
+    }
+  ]
+}
